@@ -13,7 +13,9 @@ if (process.env.NODE_ENV !== "production") {
 
 const API_KEY = process.env.SPOONACULAR_API_KEY;
 
-app.use(requireHTTPS);
+if (process.env.NODE_ENV !== "development") {
+	app.use(requireHTTPS);
+}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
