@@ -1,8 +1,8 @@
-import { Recipe } from '../models/recipe.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { finalize } from 'rxjs';
+import { Recipe } from '../models/recipe.model';
 
 const { recipeAPI } = environment;
 
@@ -13,6 +13,7 @@ export class RecipeService {
 	private _recipes: Recipe[] = [];
 	private _loading: boolean = false;
 	private _error: string = '';
+	private _lastIngredient: string = '';
 
 	constructor(private http: HttpClient) {}
 
@@ -28,8 +29,19 @@ export class RecipeService {
 		return this._error;
 	}
 
+	recipeById(id: number): Recipe | undefined {
+		return this._recipes.find((recipe: Recipe) => recipe.id === id);
+	}
+
 	findRecipesByIngredient(ingredient: string): void {
+		if (this._lastIngredient === ingredient) {
+			// No need for another request.
+			return;
+		}
+
+		this._recipes = [];
 		this._loading = true;
+		this._lastIngredient = ingredient;
 		this.http
 			.get<Recipe[]>(`${recipeAPI}/recipes?ingredient=${ingredient}`)
 			.pipe(

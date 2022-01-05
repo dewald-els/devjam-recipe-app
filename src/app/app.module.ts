@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RecipePickerPage } from './pages/recipe-picker/recipe-picker.page';
 import { RecipesPage } from './pages/recipes/recipes.page';
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeDetailPage } from './pages/recipe-detail/recipe-detail.page';
+import { RecipeDetailIngredientComponent } from './components/recipe-detail-ingredient/recipe-detail-ingredient.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
 		NavbarComponent,
 		RecipePickerPage,
 		RecipesPage,
+  RecipeDetailPage,
+  RecipeDetailIngredientComponent,
 	],
 	imports: [
 		BrowserModule,

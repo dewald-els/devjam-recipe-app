@@ -41,4 +41,12 @@ export class RecipesPage implements OnInit {
 			this.recipeService.findRecipesByIngredient(this.foodType?.name);
 		}
 	}
+
+	onRecipeClick(recipeId: number) {
+		this.router.navigate(['recipes', this.foodType?.id, 'detail', recipeId]);
+	}
+
+	onBackClick() {
+		this.router.navigateByUrl('/');
+	}
 }
