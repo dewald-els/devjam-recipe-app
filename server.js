@@ -52,7 +52,7 @@ app.get("/api/recipes", async (req, res) => {
 
 // Redirect app request to index.html
 app.get("/*", (req, res) => {
-	res.sendFile("index.html", { root: "dist/recipe-picker" });
+	res.sendFile("index.html", { root: "dist/recipe-app" });
 });
 
 app.listen(PORT, () => {
