@@ -1,0 +1,30 @@
+<main class="container mx-auto max-w-3xl px-5">
+	<app-food-type-card [foodType]="currentFoodType"></app-food-type-card>
+	<app-food-type-fact [fact]="currentFoodType.facts[0]"></app-food-type-fact>
+</main>
+
+<footer class="fixed bottom-10 w-full lg:relative lg:mt-20">
+	<div class="container mx-auto max-w-3xl px-5">
+		<section class="flex justify-between items-center">
+			<button
+				(click)="onNoClick()"
+				class="bg-white w-16 h-16 rounded-full shadow-md flex justify-center items-center"
+				title="No">
+				<span class="material-icons text-3xl text-red-600">close</span>
+			</button>
+
+			<button
+				class="bg-white w-16 h-16 rounded-full shadow-md flex justify-center items-center"
+				title="Random recipe">
+				<span class="material-icons text-3xl text-blue-600">shuffle</span>
+			</button>
+
+			<button
+				(click)="onYesClick()"
+				class="bg-white w-16 h-16 rounded-full shadow-md flex justify-center items-center"
+				title="Yes">
+				<span class="material-icons text-3xl text-green-600">favorite</span>
+			</button>
+		</section>
+	</div>
+</footer>

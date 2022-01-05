@@ -1,0 +1,23 @@
+<main class="container mx-auto px-5">
+	<header class="flex items-center mb-5 bg-slate-200 p-2 rounded-md">
+		<figure class="mr-5">
+			<img [src]="foodType?.image" [alt]="foodType?.name" width="55" />
+		</figure>
+		<h4 class="font-bold">Recipes with {{ foodType?.name }}</h4>
+	</header>
+	<ng-container *ngIf="loading">Fetching your recipes...</ng-container>
+	<ul class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+		<li *ngFor="let recipe of recipes" class="shadow rounded overflow-hidden">
+			<header>
+				<img [src]="recipe.image" [alt]="recipe.title" class="block w-full max-w-full" />
+			</header>
+			<section class="p-5">
+				<p class="font-bold mb-2 text-lg">{{ recipe.title}}</p>
+				<div class="flex">
+					<span class="material-icons w-6 mr-2 text-blue-400">recommended</span>
+					<span class="text-slate-500">{{ recipe.likes }}</span>
+				</div>
+			</section>
+		</li>
+	</ul>
+</main>
