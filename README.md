@@ -1,27 +1,46 @@
-# RecipeApp
+# Recipe Picker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Recipe picker built with Angular and Express.
 
-## Development server
+## Table of contents
+- [Recipe Picker](#recipe-picker)
+  - [Table of contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Acknowledgment](#acknowledgment)
+  - [License](#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Guides on installing dependencies for this project. E.g. for a node project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install 
+```
 
-## Build
+## Usage
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To start running the Express server on port 8000 execute:
 
-## Running unit tests
+```bash
+npm run server
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To start running the Angular client on port 4200 execute:
+```bash
+npm run client
+```
 
-## Running end-to-end tests
+## Contributing
+Are pull requests accepted, also if you have a contribution doc link it here
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Acknowledgment
+Add credit where due. Link to libraries used. E.g. using open trivia db API.
+[Tailwindcss](https://tailwind.com/)
+[Spoonacular API](https://spoonacular.com/)
+[Google Material Icons](https://fonts.google.com/icons?selected=Material+Icons)
+[Flaticon](https://www.flaticon.com/packs/butcher-49)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+What licence does it use, add link to license document
