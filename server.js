@@ -18,6 +18,7 @@ app.use(requireHTTPS);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static("./dist/recipe-app"));
 
 app.use((req, res, next) => {
 	if (!API_KEY) {
