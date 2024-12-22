@@ -21,15 +21,7 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ env.NODE_VERSION }}
-
-            - name: Cache node_modules
-              uses: actions/cache@v4
-              with:
-                  path: .npm
-                  key: ${{ runner.OS}}-node-${{ hashFiles('package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.OS }}-node-
-                      ${{ runner.OS }}-
+                  cache: npm
 
             - name: npm ci, npm build
               run: |
