@@ -28,4 +28,10 @@ export class RecipePickerPage {
 	onYesClick() {
 		this.router.navigate(['recipes', this.currentFoodType.id]);
 	}
+
+	chooseRandomIngredient() {
+		const randomIndex = Math.floor(Math.random() * FOOD_TYPES.length);
+		const randomFoodType = FOOD_TYPES[randomIndex];
+		this.router.navigate(['recipes', randomFoodType.id]);
+	}
 }

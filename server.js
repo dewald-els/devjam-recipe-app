@@ -1,7 +1,7 @@
 const axios = require("axios");
 const express = require("express");
 const app = express();
-const { PORT = 8000 } = process.env;
+const { PORT = 8080 } = process.env;
 const dotenv = require("dotenv");
 const cors = require("cors");
 
@@ -12,10 +12,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const API_KEY = process.env.SPOONACULAR_API_KEY;
-
-if (process.env.NODE_ENV !== "development") {
-	app.use(requireHTTPS);
-}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -61,15 +57,3 @@ app.get("/*", (req, res) => {
 app.listen(PORT, () => {
 	console.log(`Server started on port ${PORT}`);
 });
-
-/**
- * @author: Klement Omeri
- * Special thanks to Klement for providing the function to redirect traffic from http to https
- */
-function requireHTTPS(req, res, next) {
-	// The 'x-forwarded-proto' check is for Heroku
-	if (!req.secure && req.get("x-forwarded-proto") !== "https") {
-		return res.redirect("https://" + req.get("host") + req.url);
-	}
-	next();
-}

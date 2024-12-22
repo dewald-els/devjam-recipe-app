@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	recipeAPI: 'https://devjam-recipe-app.herokuapp.com/api',
+	recipeAPI: 'https://portfolio-devjam-recipe-app.azurewebsites.net/api',
 };

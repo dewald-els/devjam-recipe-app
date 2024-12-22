@@ -6,6 +6,7 @@ export const FOOD_TYPES: FoodType[] = [
 		image: 'assets/icons/beef.png',
 		facts: [
 			'There are at least 50 breeds of beef cattle, but fewer than 10 make up most cattle produced. (Source: fillyourplate.org)',
+			'Beef is the only natural dietary source of vitamin B12 (Source: https://www.clovermeadowsbeef.com/19-facts-about-beef/)',
 		],
 	},
 	{
@@ -21,7 +22,10 @@ export const FOOD_TYPES: FoodType[] = [
 		id: 3,
 		name: 'Egg',
 		image: 'assets/icons/egg-carton.png',
-		facts: ['Eggs are among the most nutritious foods on the planet. (Source:  healthline.com)'],
+		facts: [
+			'Eggs are among the most nutritious foods on the planet. (Source:  healthline.com)',
+			'It takes a chicken 24 to 26 hours to produce an egg. (Source: https://www.val-co.com/21-fun-egg-facts-for-world-egg-day-2021/)',
+		],
 	},
 	{
 		id: 4,
