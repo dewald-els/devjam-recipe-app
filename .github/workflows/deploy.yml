@@ -39,7 +39,7 @@ jobs:
             - name: Setup .env and secrets
               run: |
                   touch .env
-                  echo LISTEN_NOTES_API_KEY=${{ secrets.SPOONACULAR_API_KEY }} >> .env
+                  echo SPOONACULAR_API_KEY=${{ secrets.SPOONACULAR_API_KEY }} >> .env
                   cat .env
 
               working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
